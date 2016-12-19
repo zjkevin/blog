@@ -1,0 +1,661 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="mysql,数据库," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="mysql在windows下的安装，mysql官网下载">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql安装">
+<meta property="og:url" content="http://yoursite.com/mysql/mysql_install/index.html">
+<meta property="og:site_name" content="kevin's blog">
+<meta property="og:description" content="mysql在windows下的安装，mysql官网下载">
+<meta property="og:updated_time" content="2016-12-19T12:10:16.909Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mysql安装">
+<meta name="twitter:description" content="mysql在windows下的安装，mysql官网下载">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> mysql安装 | kevin's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">kevin's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">everything is going on</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                mysql安装
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-13T09:43:39+08:00" content="2016-08-13">
+              2016-08-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/mysql/" itemprop="url" rel="index">
+                    <span itemprop="name">mysql</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="mysql在windows下的安装，mysql官网下载"><a href="#mysql在windows下的安装，mysql官网下载" class="headerlink" title="mysql在windows下的安装，mysql官网下载"></a>mysql在windows下的安装，<a href="http://dev.mysql.com" target="_blank" rel="external">mysql官网下载</a></h4><a id="more"></a>
+<p>1.以管理员身份运行cmd,cd mysql解压目录的bin下，执行mysqld –install<br>2.默认配置文件my-default.ini，可以创建自己的配置文件my.ini<br>3.启动命令：net start mysql<br>4.将MySQL的bin路径加到path中</p>
+<h4 id="通过tar-gz的方式安装"><a href="#通过tar-gz的方式安装" class="headerlink" title="通过tar.gz的方式安装"></a>通过tar.gz的方式安装</h4><p>将tar.gz包解压后放在/usr/local下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mv mysql-5.7.17-linux-glibc2.5-x86_64 mysql</div></pre></td></tr></table></figure></p>
+<h5 id="创建mysql运行帐号"><a href="#创建mysql运行帐号" class="headerlink" title="创建mysql运行帐号"></a>创建mysql运行帐号</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">groupadd mysql</div><div class="line">useradd mysql -g mysql -p mysql311400 -s /sbin/nologin -M</div></pre></td></tr></table></figure>
+<h5 id="创建配置文件"><a href="#创建配置文件" class="headerlink" title="创建配置文件"></a>创建配置文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div></pre></td><td class="code"><pre><div class="line">#</div><div class="line"># The MySQL database server configuration file.</div><div class="line">#</div><div class="line"># You can copy this to one of:</div><div class="line"># - &quot;/etc/mysql/my.cnf&quot; to set global options,</div><div class="line"># - &quot;~/.my.cnf&quot; to set user-specific options.</div><div class="line"># </div><div class="line"># One can use all long options that the program supports.</div><div class="line"># Run program with --help to get a list of available options and with</div><div class="line"># --print-defaults to see which it would actually understand and use.</div><div class="line">#</div><div class="line"># For explanations see</div><div class="line"># http://dev.mysql.com/doc/mysql/en/server-system-variables.html</div><div class="line"></div><div class="line"># This will be passed to all mysql clients</div><div class="line"># It has been reported that passwords should be enclosed with ticks/quotes</div><div class="line"># escpecially if they contain &quot;#&quot; chars...</div><div class="line"># Remember to edit /etc/mysql/debian.cnf when changing the socket location.</div><div class="line">[client]</div><div class="line">port    = 3306</div><div class="line">socket    = /var/run/mysqld/mysqld.sock</div><div class="line"></div><div class="line"># Here is entries for some specific programs</div><div class="line"># The following values assume you have at least 32M ram</div><div class="line"></div><div class="line"># This was formally known as [safe_mysqld]. Both versions are currently parsed.</div><div class="line">[mysqld_safe]</div><div class="line">socket    = /var/run/mysqld/mysqld.sock</div><div class="line">nice    = 0</div><div class="line"></div><div class="line">[mysqld]</div><div class="line">#</div><div class="line"># * Basic Settings</div><div class="line">#</div><div class="line">user    = mysql</div><div class="line">pid-file  = /var/run/mysqld/mysqld.pid</div><div class="line">socket    = /var/run/mysqld/mysqld.sock</div><div class="line">port    = 3306</div><div class="line">basedir   = /usr</div><div class="line">datadir   = /home/kevin/mysqldata</div><div class="line">tmpdir    = /tmp</div><div class="line">lc-messages-dir = /usr/local/mysql/share/english</div><div class="line">skip-external-locking</div><div class="line">#</div><div class="line"># Instead of skip-networking the default is now to listen only on</div><div class="line"># localhost which is more compatible and is not less secure.</div><div class="line">bind-address    = 0.0.0.0</div><div class="line">#bind-address            = 127.0.0.1</div><div class="line">#</div><div class="line"># * Fine Tuning</div><div class="line">#</div><div class="line"># This replaces the startup script and checks MyISAM tables if needed</div><div class="line"># the first time they are touched</div><div class="line">#max_connections        = 100</div><div class="line">#table_cache            = 64</div><div class="line">#thread_concurrency     = 10</div><div class="line">#</div><div class="line"># * Query Cache Configuration</div><div class="line">#</div><div class="line">#</div><div class="line"># * Logging and Replication</div><div class="line">#</div><div class="line"># Both location gets rotated by the cronjob.</div><div class="line"># Be aware that this log type is a performance killer.</div><div class="line"># As of 5.1 you can enable the log at runtime!</div><div class="line">#general_log_file        = /var/log/mysql/mysql.log</div><div class="line">#general_log             = 1</div><div class="line">#</div><div class="line"># Error logging goes to syslog due to /etc/mysql/conf.d/mysqld_safe_syslog.cnf.</div><div class="line">#</div><div class="line"># Here you can see queries with especially long duration</div><div class="line">#log_slow_queries = /var/log/mysql/mysql-slow.log</div><div class="line">#long_query_time = 2</div><div class="line">#log-queries-not-using-indexes</div><div class="line">#</div><div class="line"># The following can be used as easy to replay backup logs or for replication.</div><div class="line"># note: if you are setting up a replication slave, see README.Debian about</div><div class="line">#       other settings you may need to change.</div><div class="line">#server-id    = 1</div><div class="line">#log_bin      = /var/log/mysql/mysql-bin.log</div><div class="line">#binlog_do_db   = include_database_name</div><div class="line">#binlog_ignore_db = include_database_name</div><div class="line">#</div><div class="line"># * InnoDB</div><div class="line">#</div><div class="line"># InnoDB is enabled by default with a 10MB datafile in /var/lib/mysql/.</div><div class="line"># Read the manual for more InnoDB related options. There are many!</div><div class="line">#</div><div class="line"># * Security Features</div><div class="line">#</div><div class="line"># Read the manual, too, if you want chroot!</div><div class="line"># chroot = /var/lib/mysql/</div><div class="line">#</div><div class="line"># For generating SSL certificates I recommend the OpenSSL GUI &quot;tinyca&quot;.</div><div class="line">#</div><div class="line"># ssl-ca=/etc/mysql/cacert.pem</div><div class="line"># ssl-cert=/etc/mysql/server-cert.pem</div><div class="line"># ssl-key=/etc/mysql/server-key.pem</div><div class="line"></div><div class="line">[mysqldump]</div><div class="line">quick</div><div class="line">quote-names</div><div class="line">max_allowed_packet  = 16M</div><div class="line"></div><div class="line">[mysql]</div><div class="line">#no-auto-rehash # faster start of mysql but no tab completition</div><div class="line"></div><div class="line">[isamchk]</div><div class="line">key_buffer    = 16M</div><div class="line"></div><div class="line">#</div><div class="line"># * IMPORTANT: Additional settings that can override those from this file!</div><div class="line">#   The files must end with &apos;.cnf&apos;, otherwise they&apos;ll be ignored.</div><div class="line">#</div><div class="line">!includedir /etc/mysql/conf.d/</div></pre></td></tr></table></figure>
+<h5 id="设置权限"><a href="#设置权限" class="headerlink" title="设置权限"></a>设置权限</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">mkdir /etc/mysql/conf.d</div><div class="line">chgrp -R mysql /etc/mysql</div><div class="line">chown -R mysql /etc/mysql</div><div class="line">chown -R mysql /home/kevin/mysqldata/</div><div class="line">chgrp -R mysql /home/kevin/mysqldata/</div><div class="line">chgrp -R mysql /var/run/mysqld</div><div class="line">chown -R mysql /var/run/mysqld</div></pre></td></tr></table></figure>
+<h5 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">./mysqld --initialize</div><div class="line">cd /usr/local/mysql/bin/</div><div class="line">./mysqld --initialize</div><div class="line">./mysqld --user=mysql</div></pre></td></tr></table></figure>
+<h5 id="系统自启动"><a href="#系统自启动" class="headerlink" title="系统自启动"></a>系统自启动</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysqld</div><div class="line">chkconfig --add mysqld</div><div class="line"></div><div class="line">systemd配置</div><div class="line">vim /lib/systemd/system/mysqld.service</div><div class="line"></div><div class="line">[Unit]</div><div class="line">Description=MySQL Server</div><div class="line">After=network.target</div><div class="line"></div><div class="line">[Service]</div><div class="line">ExecStart=/usr/local/mysql/bin/mysqld --datadir=/home/kevin/mysqldata --socket=/var/run/mysqld/mysqld.sock </div><div class="line">User=mysql</div><div class="line">Group=mysql</div><div class="line">WorkingDirectory=/usr</div><div class="line"></div><div class="line">[Install]</div><div class="line">WantedBy=multi-user.target</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mysql/" rel="tag">#mysql</a>
+          
+            <a href="/tags/数据库/" rel="tag">#数据库</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/django/django使用细节总结/" rel="next" title="django使用细节总结">
+                <i class="fa fa-chevron-left"></i> django使用细节总结
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/待处理/待处理队列/" rel="prev" title="待处理队列">
+                待处理队列 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="zhangjie" />
+          <p class="site-author-name" itemprop="name">zhangjie</p>
+          <p class="site-description motion-element" itemprop="description">行到水穷处坐看云起时</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://www.leangoo.com/" target="_blank" title="敏捷工具">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  敏捷工具
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/git" target="_blank" title="coding">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  coding
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.qt.io/" target="_blank" title="QT官网">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  QT官网
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://kivy.org/" target="_blank" title="kivy">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  kivy
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://stackoverflow.com/" target="_blank" title="S.O.">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  S.O.
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#mysql在windows下的安装，mysql官网下载"><span class="nav-number">1.</span> <span class="nav-text">mysql在windows下的安装，mysql官网下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过tar-gz的方式安装"><span class="nav-number">2.</span> <span class="nav-text">通过tar.gz的方式安装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建mysql运行帐号"><span class="nav-number">2.1.</span> <span class="nav-text">创建mysql运行帐号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#创建配置文件"><span class="nav-number">2.2.</span> <span class="nav-text">创建配置文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置权限"><span class="nav-number">2.3.</span> <span class="nav-text">设置权限</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#初始化"><span class="nav-number">2.4.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#系统自启动"><span class="nav-number">2.5.</span> <span class="nav-text">系统自启动</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhangjie</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
